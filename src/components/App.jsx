@@ -58,8 +58,8 @@ export class App extends Component {
     }
   }
 
-  onOpenModal = evt => {
-    this.setState({ largeImg: evt.target.__reactProps$my0b8xjcj.largeimage });
+  onOpenModal = img => {
+    this.setState({ largeImg: img });
     this.setState({ showModal: true });
   };
 

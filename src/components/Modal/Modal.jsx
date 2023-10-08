@@ -4,7 +4,7 @@ export const Modal = ({ largeImg, isOpen, onClick, onRequestClose }) => {
   return (
     <Overlay isOpen={isOpen} onRequestClose={onRequestClose}>
       <ModalW>
-        <img src={largeImg} onClick={onClick} />
+        <img src={largeImg} alt="this-isimage" onClick={onClick} />
       </ModalW>
     </Overlay>
   );
