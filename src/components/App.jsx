@@ -61,10 +61,18 @@ export class App extends Component {
   onOpenModal = img => {
     this.setState({ largeImg: img });
     this.setState({ showModal: true });
+
+    window.addEventListener('click', this.onCloseModal);
   };
 
-  onCloseModal = () => {
-    this.setState({ showModal: false, largeImg: '' });
+  onCloseModal = e => {
+    if (
+      e.target.className ===
+      'ReactModal__Content ReactModal__Content--after-open sc-qZruQ cHdZzS'
+    ) {
+      window.removeEventListener('click', this.onOverlayClick);
+      this.setState({ showModal: false, largeImg: '' });
+    }
   };
 
   render() {
